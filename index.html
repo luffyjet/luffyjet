@@ -1,0 +1,94 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>luffyjet's Home page</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/main.css"/>   
+    
+</script>
+    
+</head>
+
+<body>
+<!--
+<div id="bg_layer" style="position:absolute; width:100%; height:100%; z-index:-1">    
+<img src="" id="bg_img" height="100%" width="100%"/>    
+</div>  -->
+
+<div class="vi">
+
+    <div class="sidebar">
+        <div class="header" >
+         	<div class="avatar">
+         	<a href="http://tech.luffyjet.com">
+             <img id="img_icon" class="quote-text animate-init" src="assets/images/icon.jpg" />
+             </a>
+            </div>  				
+			
+            <h2 class="quote-text animate-init"><a text-decoration: none;href="http://tech.luffyjet.com">一个热爱ACGN的老司机</a></h2>
+            
+            <div class="menu">            
+            <a href="http://tech.luffyjet.com" class="animate-init">进入博客</a>
+            <!--<a href="http://blog.luffyjet.com" class="animate-init">Lofter</a>-->
+            <a href="https://github.com/luffyjet" class="animate-init">GitHub</a>       
+           
+        	</div>
+            
+            <div class="quote">
+                <p class="quote-text animate-init">“ 要成功就要有正确的计划和坚持计划的强大毅力 ”</p>
+                <!--<p class="quote-author animate-init"> &nbsp;  &nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp; —— <strong>code monkey</strong></p>
+                -->
+            </div>
+           
+        </div>
+       
+        <div class="location">
+            <i class="location-icon"></i>
+            <span class="location-text animate-init">ShenZhen - China</span>
+        </div>
+    </div>
+
+    <div class="content">
+        <span class="close">close</span>
+    </div>
+</div>
+<script type="text/javascript" src="assets/vendors/jquery/index.js"></script>
+<script>
+    $(document).ready(function () {
+        var delay = 1;
+        var DELAY_STEP = 200;
+        var animationOptions = { opacity: 1, top: 0};
+
+        $('h1').animate(animationOptions).promise()
+                .pipe(animateMain)
+                .pipe(animateLocationIcon);
+
+        function animateMain() {
+            var dfd = $.Deferred();
+            var els = $('.animate-init');
+            var size = els.size();
+
+            els.each(function (index, el) {
+                delay++;
+                $(el).delay(index * DELAY_STEP)
+                        .animate(animationOptions);
+                (size - 1 === index) && dfd.resolve();
+            });
+            return dfd.promise();
+        }
+
+        function animateLocationIcon() {
+            $('.location-icon').delay(delay * DELAY_STEP).animate({
+                opacity: 1,
+                top: 0
+            }).promise().done(animationQuote);
+        }
+
+        function animationQuote() {}
+    });
+	
+</script>
+</body>
+</html>
