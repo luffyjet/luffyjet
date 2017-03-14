@@ -1,0 +1,9 @@
+[{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target": {
+    "namespace": "android_app",
+    "package_name": "com.google.googleio",
+    "sha256_cert_fingerprints":
+    ["D6:69:37:34:DD:9A:44:19:83:80:A0:00:6A:6B:85:28:DB:69:29:4B:FF:BE:EA:F2:CF:32:33:B2:B8:82:F4:A8"]
+  }
+}]
